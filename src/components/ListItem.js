@@ -1,13 +1,24 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
+import {
+  LayoutAnimation,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View
+} from "react-native";
 import { connect } from "react-redux";
 import * as actions from "../actions";
+import { CardSection } from "./common/CardSection";
 
 class ListItem extends Component {
+  componentWillUpdate() {
+    LayoutAnimation.spring();
+  }
+
   renderDescription() {
     console.log("heet");
-    const { library, selectedLibraryId } = this.props;
-    if (library.id === selectedLibraryId) {
+    const { library, expanded } = this.props;
+    if (expanded) {
       return <Text>{library.description}</Text>;
     }
   }
@@ -27,8 +38,9 @@ class ListItem extends Component {
     );
   }
 }
-const mapStateToProps = state => {
-  return { selectedLibraryId: state.selectedLibraryId };
+const mapStateToProps = (state, ownProps) => {
+  const expanded = state.selectedLibraryId === ownProps.library.id;
+  return { expanded };
 };
 export default connect(mapStateToProps, actions)(ListItem);
 const styles = StyleSheet.create({
@@ -37,7 +49,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     padding: 5,
     backgroundColor: "#fff",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     borderColor: "#ddd"
   },
   text: {
