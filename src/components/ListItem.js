@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import * as actions from "../actions";
-import { CardSection } from "./common/CardSection";
+import { CardSection } from "./common";
 
 class ListItem extends Component {
   componentWillUpdate() {
@@ -16,23 +16,25 @@ class ListItem extends Component {
   }
 
   renderDescription() {
-    console.log("heet");
     const { library, expanded } = this.props;
     if (expanded) {
-      return <Text>{library.description}</Text>;
+      return (
+        <CardSection>
+          <Text>{library.description}</Text>
+        </CardSection>
+      );
     }
   }
   render() {
-    console.log(this.props);
     const { id, title } = this.props.library;
 
     return (
       <TouchableWithoutFeedback onPress={() => this.props.selectLibrary(id)}>
         <View>
-          <View style={styles.containerStyle}>
+          <CardSection>
             <Text style={styles.text}>{title}</Text>
-            <Text style={styles.text}>{this.renderDescription()}</Text>
-          </View>
+            {this.renderDescription()}
+          </CardSection>
         </View>
       </TouchableWithoutFeedback>
     );
