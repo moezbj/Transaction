@@ -5,12 +5,14 @@ import * as actions from "../actions";
 
 class ListItem extends Component {
   renderDescription() {
+    console.log("heet");
     const { library, selectedLibraryId } = this.props;
     if (library.id === selectedLibraryId) {
       return <Text>{library.description}</Text>;
     }
   }
   render() {
+    console.log(this.props);
     const { id, title } = this.props.library;
 
     return (
@@ -18,7 +20,7 @@ class ListItem extends Component {
         <View>
           <View style={styles.containerStyle}>
             <Text style={styles.text}>{title}</Text>
-            {this.renderDescription()}
+            <Text style={styles.text}>{this.renderDescription()}</Text>
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -28,16 +30,15 @@ class ListItem extends Component {
 const mapStateToProps = state => {
   return { selectedLibraryId: state.selectedLibraryId };
 };
-export default connect(null, actions)(ListItem);
+export default connect(mapStateToProps, actions)(ListItem);
 const styles = StyleSheet.create({
   containerStyle: {
+    flexDirection: "column",
     borderBottomWidth: 1,
     padding: 5,
     backgroundColor: "#fff",
     justifyContent: "flex-start",
-    flexDirection: "row",
-    borderColor: "#ddd",
-    position: "relative"
+    borderColor: "#ddd"
   },
   text: {
     fontSize: 18,
