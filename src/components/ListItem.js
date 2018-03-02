@@ -20,14 +20,17 @@ class ListItem extends Component {
     if (expanded) {
       return (
         <CardSection>
-          <Text>{library.description}</Text>
+          <Text>
+            style={styles.text}
+            {library.description}
+          </Text>
         </CardSection>
       );
+      console.warn("heet");
     }
   }
   render() {
     const { id, title } = this.props.library;
-
     return (
       <TouchableWithoutFeedback onPress={() => this.props.selectLibrary(id)}>
         <View>
@@ -40,6 +43,7 @@ class ListItem extends Component {
     );
   }
 }
+
 const mapStateToProps = (state, ownProps) => {
   const expanded = state.selectedLibraryId === ownProps.library.id;
   return { expanded };
@@ -47,7 +51,6 @@ const mapStateToProps = (state, ownProps) => {
 export default connect(mapStateToProps, actions)(ListItem);
 const styles = StyleSheet.create({
   containerStyle: {
-    flexDirection: "column",
     borderBottomWidth: 1,
     padding: 5,
     backgroundColor: "#fff",
@@ -55,6 +58,7 @@ const styles = StyleSheet.create({
     borderColor: "#ddd"
   },
   text: {
+    flex: 1,
     fontSize: 18,
     paddingLeft: 15
   }

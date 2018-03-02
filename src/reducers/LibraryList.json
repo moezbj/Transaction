@@ -2,36 +2,43 @@
   {
     "id": 0,
     "title": "Webpack",
-    "description": "webpackis a module bundler"
+    "description":
+      "webpackis a module bundler..webpackis a module bundler..webpackis a module bundler..webpackis a module bundler..webpackis a module bundler..webpackis a module bundler"
   },
   {
     "id": 1,
     "title": "React",
-    "description": "React makes front end easy"
+    "description":
+      "React makes front end easy..React makes front end easy..React makes front end easy..React makes front end easy.React makes front end easy..React makes front end easy"
   },
   {
     "id": 2,
     "title": "Redux",
-    "description": "The state manager"
+    "description":
+      "The state manager..The state manager..The state manager..The state manager..The state manager..The state manager..The state manager.."
   },
   {
     "id": 3,
     "title": "React-Redux",
-    "description": "Is the officiel set bindings between..."
+    "description":
+      "Is the officiel set bindings between...Is the officiel set bindings between.....Is the officiel set bindings between.....Is the officiel set bindings between....Is the officiel set bindings between..."
   },
   {
     "id": 4,
     "title": "Loadash",
-    "description": "a moder js utility library delivering modules.."
+    "description":
+      "a moder js utility library delivering modules..a moder js utility library delivering modules..a moder js utility library delivering modules..a moder js utility library delivering modules..a moder js utility library delivering modules.."
   },
   {
     "id": 5,
     "title": "Redux-thunk",
-    "description": "Redux thunk middleware allows you to write actioln .."
+    "description":
+      "Redux thunk middleware allows you to write actioln ..Redux thunk middleware allows you to write actioln ..Redux thunk middleware allows you to write actioln ..Redux thunk middleware allows you to write actioln ..Redux thunk middleware allows you to write actioln .."
   },
   {
     "id": 6,
     "title": "ESLint",
-    "description": "oopen sourse js linting utility..."
+    "description":
+      "oopen sourse js linting utility...oopen sourse js linting utility...oopen sourse js linting utility...oopen sourse js linting utility...oopen sourse js linting utility...oopen sourse js linting utility...oopen sourse js linting utility..."
   }
 ]
